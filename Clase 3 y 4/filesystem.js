@@ -23,7 +23,7 @@ class Contenedor {
       let data = await this.readData();
       let jsonData = JSON.parse(data);
       let productArray = [];
-      const index = jsonData.map((x) => x.id).sort();
+           const index = jsonData.map((x) => x.id).sort((a, b) => a.id - b.id);
       objeto.id = index[index.length - 1] + 1;
 
       if (!objeto.id) {
@@ -56,11 +56,8 @@ class Contenedor {
       let data = await this.readData();
       let jsonData = JSON.parse(data);
       let getId = jsonData.find((e) => e.id === id);
-      if (id) {
-        console.log(getId);
-      } else {
+      if (getId) return console.log(getId);
         console.log("El id no existe");
-      }
     } catch (error) {
       console.log(error);
     }
@@ -81,7 +78,7 @@ class Contenedor {
       let jsonData = JSON.parse(data);
       let deleteId = jsonData.find((e) => e.id === id);
       let deleteIndex = jsonData.indexOf(deleteId);
-      if (id) {
+      if (deleteIndex > 0) {
         jsonData.splice(deleteIndex, 1);
         await fs.promises.writeFile(
           this.fileName,
@@ -128,11 +125,11 @@ let product3 = {
 };
 
 const contenedor2 = new Contenedor("products");
-contenedor2.readData();
+// contenedor2.readData();
 // contenedor2.save(product3);
 // // contenedor2.save(product2);
 // // contenedor2.save(product3);
 // contenedor2.getById(3)
 // contenedor2.getAll()
 // contenedor2.deleteById(2)
-// contenedor2.deleteAll()
+contenedor2.deleteAll()
