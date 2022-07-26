@@ -1,0 +1,14 @@
+{
+  "name": "express-primera-clase",
+  "version": "0.0.1",
+  "description": "clase_5_node_coder",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andres Sebastian Martinez Chas",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
