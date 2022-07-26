@@ -23,7 +23,7 @@ class Contenedor {
       let data = await this.readData();
       let jsonData = JSON.parse(data);
       let productArray = [];
-           const index = jsonData.map((x) => x.id).sort((a, b) => a.id - b.id);
+      const index = jsonData.map((x) => x.id).sort((a, b) => a.id - b.id);
       objeto.id = index[index.length - 1] + 1;
 
       if (!objeto.id) {
@@ -57,7 +57,7 @@ class Contenedor {
       let jsonData = JSON.parse(data);
       let getId = jsonData.find((e) => e.id === id);
       if (getId) return console.log(getId);
-        console.log("El id no existe");
+      console.log("El id no existe");
     } catch (error) {
       console.log(error);
     }
@@ -132,4 +132,4 @@ const contenedor2 = new Contenedor("products");
 // contenedor2.getById(3)
 // contenedor2.getAll()
 // contenedor2.deleteById(2)
-contenedor2.deleteAll()
+// contenedor2.deleteAll()
