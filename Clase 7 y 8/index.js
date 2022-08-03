@@ -51,7 +51,19 @@ app.get("/api/productos/:id", (req, res) => {
 //POST:body sin ID, se genera automáticamente
 app.post("/api/productos", (req, res) => {
   const { body } = req;
+  body.id = 1;
+  let productArray = [];
+  const index = products.map((x) => x.id).sort((a, b) => a.id - b.id);
+  body.id = index[index.length - 1] + 1;
 
-  res.json("Hola Mundo");
-  console.log(body);
-});
+  if (!body.id) {
+    body.id = 1;
+    productArray = [{ ...body }];
+    return productArray[0].id;
+     
+    
+  } else {
+    products.push(body);
+    res.json('Hola Mundo')
+    console.log(products)
+}})
