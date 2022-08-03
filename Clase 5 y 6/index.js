@@ -55,7 +55,7 @@ class Contenedor {
 }
 
 const contenedor2 = new Contenedor("products");
-// contenedor2.readData();
+contenedor2.readData();
 
 contenedor2.getAll();
 

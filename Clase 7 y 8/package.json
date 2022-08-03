@@ -1,0 +1,14 @@
+{
+  "name": "desafio_clase_8",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andres Sebastian Martinez Chas",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
